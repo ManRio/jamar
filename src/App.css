@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 /* General Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Outfit', sans-serif; /* Aplica la fuente Outfit */
+}
+
 
 .header {
   display: flex;
