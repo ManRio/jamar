@@ -58,7 +58,7 @@
 }
 
 .service:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .service-image {
@@ -75,7 +75,7 @@
 }
 
 .service-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.25);
 }
 
 .service-description {
@@ -128,12 +128,13 @@
   color: #264561;
   max-width: 80%; /* No más del 80% del ancho de la página */
   margin: 0 auto; /* Centrar la sección */
+  margin-bottom: 3%;
 }
 
 .contact-section h2 {
   font-size: 2rem;
   margin: 1rem auto;
-  padding: 1rem;;
+  padding: 1rem;
 }
 
 .contact-section p {
@@ -180,16 +181,52 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
   flex: 1; /* Para que las tarjetas ocupen el mismo espacio */
   max-width: calc(50% - 1rem); /* Ajusta el ancho máximo de las tarjetas */
+  transition: 3ms all ;
+}
+
+.workflow-card:hover {
+  transform: scale(1.05); /* Escalar la tarjeta al pasar el ratón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .workflow-card h3 {
   color: #264561;
-  margin-bottom: 0.5rem; /* Espacio entre el título y el texto */
   margin: 0 auto;
+  margin-bottom: 0.5rem; /* Espacio entre el título y el texto */
 }
 
 .workflow-card p {
-  text-align: justify; /* Alinear el texto */
+  text-align: center; /* Alinear el texto */
   color: #264561;
   margin: 0 auto;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Cambia el tamaño según sea necesario */
+  .contact-container {
+    flex-direction: column; /* Cambia a columna en dispositivos pequeños */
+    align-items: center; /* Centrar el contenido */
+  }
+
+  .contact-form-container {
+    flex: 0 0 100%; /* El formulario ocupa el 100% */
+    margin-right: 0 auto;
+    margin-bottom: 1rem; /* Espacio debajo del formulario */
+  }
+
+  .workflow-container {
+    flex: 0 0 100%; /* Las tarjetas ocupan el 100% */
+    flex-direction: column; /* Apilan las tarjetas verticalmente */
+  }
+
+  .workflow-row {
+    display: block; /* Cambia a bloque para que cada tarjeta ocupe una línea completa */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+  }
+
+  .workflow-card {
+    max-width: 80%; /* Limitar el ancho de las tarjetas al 80% */
+    margin-bottom: 1rem; /* Espacio entre las tarjetas */
+  }
 }

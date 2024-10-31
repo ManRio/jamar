@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
-import ContactForm from "./ContactForm";
+import Presupuesto from "./Presupuesto";
 
 const Nosotros = () => {
   return (
@@ -23,8 +23,11 @@ const Nosotros = () => {
           creación y desarrollo de páginas web y aplicaciones web personalizadas
         </strong>
         , asegurando que cada cliente tenga una presencia en línea que destaque
-        y atraiga a sus clientes. Permítanos ser su aliado en el mundo digital y
-        llevar su negocio al siguiente nivel.
+        y atraiga a sus clientes.{" "}
+        <strong>
+          Permítanos ser su aliado en el mundo digital y llevar su negocio al
+          siguiente nivel.
+        </strong>
       </p>
 
       <div className="service-container">
@@ -104,62 +107,7 @@ const Nosotros = () => {
           </div>
         </div>
       </div>
-      <div className="contact-section">
-        <h2>Presupuesto</h2>
-        <p>
-          Si estás considerando solicitar un presupuesto, no dudes en
-          contactarnos a través de nuestro formulario. Estamos aquí para
-          brindarte soluciones personalizadas y responderemos a tu consulta en
-          menos de 24 horas. Tu éxito es nuestra prioridad, y estamos ansiosos
-          por ayudarte a llevar tu proyecto al siguiente nivel. ¡Esperamos tu
-          mensaje!
-        </p>
-        <div className="contact-container">
-          <div className="contact-form-container">
-            <ContactForm />
-          </div>
-          <div className="workflow-container">
-            <div className="workflow-row">
-              <div className="workflow-card">
-                <h3>1. Asesoría Individualizada</h3>
-                <p>
-                  Proporcionamos asesoría personalizada al cliente, alineando
-                  nuestras recomendaciones con sus necesidades específicas y
-                  objetivos estratégicos.
-                </p>
-              </div>
-              <div className="workflow-card">
-                <h3>2. Evaluación de Proyecto</h3>
-                <p>
-                  Después de una exhaustiva evaluación del proyecto, nuestro
-                  equipo se reunirá con el cliente para definir los plazos y
-                  asegurarnos de que el desarrollo se ajuste perfectamente a los
-                  objetivos establecidos.
-                </p>
-              </div>
-            </div>
-            <div className="workflow-row">
-              <div className="workflow-card">
-                <h3>3. Desarrollo del Proyecto</h3>
-                <p>
-                  Llevaremos a cabo el proyecto acordado, garantizando en todo
-                  momento el cumplimiento de los plazos establecidos y
-                  manteniendo una comunicación fluida con el cliente.
-                </p>
-              </div>
-              <div className="workflow-card">
-                <h3>4. Presentación Final del Proyecto</h3>
-                <p>
-                  Una vez finalizado el proyecto, realizaremos una presentación
-                  oficial al cliente, asegurando que el resultado esté en pleno
-                  funcionamiento y cumpla con lo acordado en la fase de
-                  evaluación.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Presupuesto />
     </section>
   );
 };
