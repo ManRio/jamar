@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem 2rem; /* Ajusta el padding según necesites */
+  background-color: #264561;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Logo */
+.header__logo {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header__logo img {
+  height: 45px;
+}
+
+/* Navegación */
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 1.5rem; /* Ajuste del espacio entre enlaces */
+  list-style-type: none;
+  padding: 0;
+}
+
+.header__nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.header__nav-link:hover {
+  color: #cde6c6; /* Cambia el color según tu diseño */
+}
+
+/* Ocultar el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    height: 100vh;
+    width: 60%;
+    background-color: rgba(38, 69, 97, 0.8);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translate(100%);
   }
-  to {
-    transform: rotate(360deg);
+
+  /* Mostrar el menú cuando esté abierto */
+  .header__nav--open {
+    display: flex;
+    transform: translate(0);
+    flex-direction: column;
+  }
+
+  /* Estilos del botón hamburguesa */
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .header__menu-line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+  }
+
+  .header__menu-line:hover {
+    background-color: #cde6c6; /* Cambia el color según tu diseño */
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Ocultar el botón hamburguesa en pantallas grandes */
+@media (min-width: 769px) {
+  .header__menu {
+    display: none;
+  }
+}
+
+.page{
+  background-color: #ddebc8;
+}
+
+.img-404 {
+  height: 90vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  filter: drop-shadow(3px 3px 0.8rem #264561);
+}
+
+/* Footer general */
+.footer {
+  background-color: #264561;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+/* Contenedor principal de las columnas en el footer */
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo para centrar el contenido */
+  gap: 2rem;
+}
+
+/* Columnas del footer */
+.footer__column,
+.footer__left {
+  flex: 1;
+  min-width: 400px;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Formulario más pequeño en el footer */
+.footer-form {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto; /* Centra el formulario dentro de la columna */
+}
+
+/* Contenido de la columna izquierda (formulario) */
+.footer__contact-info h3,
+.footer__services h3 {
+  font-size: 1.2rem;
+  color: #cde6c6;
+  margin-bottom: 0.5rem;
+}
+
+.footer__contact-info a,
+.footer__phone,
+.footer__social a {
+  color: #cde6c6;
+  display: block;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+/* Redes sociales */
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer__social img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Servicios en la columna derecha */
+.footer__services ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer__services ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer__services ul li a {
+  color: #cde6c6;
+  text-decoration: none;
+}
+
+.footer__services ul li a:hover {
+  color: #ffffff;
+}
+
+/* Sub-footer */
+.footer__sub-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #cde6c6;
+  font-size: 0.875rem;
+  color: #cde6c6;
+}
+
+/* Responsive Styles para el Footer */
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__column,
+  .footer__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-form {
+    max-width: 100%; /* Sin límite de anchura en pantallas pequeñas */
+  }
+}
+
+/*CONTACT-FORM*/
+
+/* Estilos generales del formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #cde6c6;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  font-size: 1rem;
+  max-width: 400px; /* Compacto en footer */
+}
+
+/* Estilos para la página Contact */
+
+.contact-page {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: #ddebc8;
+}
+
+.contact-page .contact-form {
+  max-width: 600px; /* Más ancho en página Contact */
+  margin: 80px auto;
+}
+
+/* Estilos para campos del formulario */
+.contact-form label {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Label con input en columna */
+.contact-form label:not(.contact-form__checkbox-label) {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Checkbox y texto alineados horizontalmente */
+.contact-form__checkbox-label {
+  display: flex;
+  align-items: center; /* Alineación vertical del checkbox y el texto */
+  font-size: 0.9rem; /* Tamaño de letra más pequeño */
+  color: #333;
+  margin-top: 0.5rem; /* Espacio superior para separación */
+}
+
+.contact-form__checkbox-label input[type="checkbox"] {
+  margin-right: 0.5rem; /* Espacio entre el checkbox y el texto */
+  transform: scale(1.2); /* Aumentar el tamaño del checkbox */
+}
+
+/* Asegurarse de que el texto no esté afectado por otros estilos */
+.contact-form__checkbox-label span {
+  line-height: 1.5; /* Ajustar la altura de línea para mejor alineación */
+}
+
+/* Aumentar el tamaño del formulario en la página de contacto */
+.contact-page .contact-form {
+  max-width: 600px; /* Aumentar el ancho del formulario */
+  margin: 80px auto; /* Centrar el formulario */
+}
+
+/* Botón de envío */
+.contact-form button {
+  padding: 0.75rem 1.25rem;
+  background-color: #264561;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #1e3a51;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.9rem;
   }
 }
