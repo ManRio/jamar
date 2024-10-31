@@ -8,10 +8,13 @@ import Portfolio from "../Portfolio";
 import Presupuesto from "../Presupuesto";
 import Contacto from "../Contacto";
 import { Footer } from "../layout/Footer";
+import { AvisoLegal } from "../AvisoLegal";
+import { PoliticaCookies } from "../PoliticaCookies";
+import { PoliticaPrivacidad } from "../PoliticaPrivacidad";
 
 export const Routing = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter className="app-container">
       {/* Header */}
       <Header />
       {/* Content */}
@@ -24,6 +27,9 @@ export const Routing = () => {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/presupuesto" element={<Presupuesto />} />
           <Route path="/contacto" element={<Contacto />} />
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/politica-cookies" element={<PoliticaCookies />} />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
           <Route
             path="*"
             element={
