@@ -4,7 +4,33 @@
     <meta charset="utf-8" />
     <link rel="icon" href="images/logogradient.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <script>
+      (function() {
+        var themeColor = '#000000';
+        var metaThemeColor = document.querySelector('meta[name=theme-color]');
+        if (!metaThemeColor) {
+          metaThemeColor = document.createElement('meta');
+          metaThemeColor.name = 'theme-color';
+          document.head.appendChild(metaThemeColor);
+        }
+        metaThemeColor.content = themeColor;
+
+        // For browsers that do not support meta[name=theme-color]
+        var setThemeColor = function(color) {
+          var style = document.createElement('style');
+          style.innerHTML = `
+            @media (prefers-color-scheme: light) {
+              body { background-color: ${color}; }
+            }
+            @media (prefers-color-scheme: dark) {
+              body { background-color: ${color}; }
+            }
+          `;
+          document.head.appendChild(style);
+        };
+        setThemeColor(themeColor);
+      })();
+    </script>
     <script>
       (function() {
         var themeColor = '#000000';
