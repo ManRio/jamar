@@ -1,70 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Proyecto: Presencia Digital
 
-## Available Scripts
+Este es un proyecto web diseñado para ofrecer servicios de soluciones digitales a empresas y emprendedores, incluyendo diseño gráfico, gestión de redes sociales y creación de páginas web. El objetivo es facilitar a los usuarios la obtención de información y la contratación de nuestros servicios.
 
-In the project directory, you can run:
+## Características
 
-### `npm start`
+### Estructura del Proyecto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Página de Inicio**: Contiene una sección principal (Hero Section) con un título atractivo y una llamada a la acción. Se ha implementado un diseño responsivo que incluye imágenes difuminadas para mejorar la estética.
+  
+- **Servicios**: 
+  - Se han creado tarjetas para mostrar los distintos servicios ofrecidos. 
+  - Un flujo de trabajo visual que describe el proceso de servicio a los clientes.
+  
+- **Formulario de Contacto**: 
+  - Permite a los usuarios enviar consultas. Incluye campos para nombre, teléfono, email, tipo de servicio y mensaje.
+  - Se ha añadido un checkbox que requiere la aceptación de las condiciones legales y la política de privacidad, con enlaces a las respectivas páginas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Páginas Legales**:
+  - **Aviso Legal**: Detalla la información legal requerida.
+  - **Política de Privacidad**: Describe cómo se gestionan los datos personales.
+  - **Política de Cookies**: Explica el uso de cookies en el sitio.
 
-### `npm test`
+### Tecnologías Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **React Router**: Para la gestión de rutas en la aplicación.
+- **CSS**: Para el estilo y diseño de componentes.
+- **JavaScript**: Para la lógica de la aplicación.
 
-### `npm run build`
+## Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para ejecutar este proyecto localmente, sigue estos pasos:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clona el repositorio:
+   git clone https://github.com/ManRio/jamar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+2. Navega al directorio del proyecto:
+   cd jamar
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Instala las dependencias:
+   npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Inicia la aplicación:
+   npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+La aplicación debería abrirse en `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contribuciones
 
-## Learn More
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, sigue estos pasos:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Haz un fork del repositorio.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Crea una nueva rama:
+    git checkout -b nombre_de_tu_rama
 
-### Code Splitting
+3. Realiza tus cambios y haz un commit:
+   git commit -m 'Descripción de los cambios realizados'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Envía un pull request.
 
-### Analyzing the Bundle Size
+## Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este proyecto está bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](LICENSE).
 
-### Making a Progressive Web App
+## Contacto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Para cualquier consulta o sugerencia, puedes contactar a manureina87@gmail.com o abrir un issue en el repositorio.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+¡Gracias por tu interés en el proyecto!
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
