@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const ContactForm = ({ className = '' }) => {
   const [formData, setFormData] = useState({
@@ -92,6 +93,22 @@ export const ContactForm = ({ className = '' }) => {
           rows="4"
           placeholder="Cuéntanos más sobre tu proyecto y necesidades"
         />
+      </label>
+
+            {/* Checkbox para aceptar condiciones legales */}
+            <label className="contact-form__checkbox-label">
+        <input
+          type="checkbox"
+          name="acceptedLegalConditions"
+          checked={formData.acceptedLegalConditions}
+          onChange={handleChange}
+          required
+        />
+        <span>
+          Acepto las{" "}
+          <Link to="/aviso-legal" className="link">condiciones legales</Link> y la{" "}
+          <Link to="/politica-privacidad" className="link">política de privacidad</Link>.
+        </span>
       </label>
 
       <button type="submit">Enviar</button>

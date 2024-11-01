@@ -6,18 +6,21 @@ const Inicio = () => {
     <div className="inicio">
       {/* Hero Section */}
       <section className="hero-section">
-        <h1 className="hero-title">¡Impulsa tu presencia digital!</h1>
-        <p className="hero-subtitle">
-          Soluciones digitales a medida para llevar tu negocio al siguiente
-          nivel.
-        </p>
-        <div className="hero-buttons">
-          <button className="hero-button hero-button--primary">
-            Contáctanos
-          </button>
-          <button className="hero-button hero-button--secondary">
-            Explorar Servicios
-          </button>
+        <div className="hero-content">
+          <h1 className="hero-title">¡Impulsa tu presencia digital de manera sencilla y efectiva!</h1>
+          <p className="hero-subtitle">
+          Nos encargamos de cada detalle para que tú te enfoques en tu negocio.
+          </p>
+          <div className="hero-buttons">
+            <button className="hero-button hero-button--primary">
+              Contáctanos
+            </button>
+            <button className="hero-button hero-button--secondary">
+              Explorar Servicios
+            </button>
+          </div>
+        </div>
+        <div className="hero-image">
         </div>
       </section>
 
@@ -42,7 +45,9 @@ const Inicio = () => {
           <div className="servicio-card">
             <h3>Diseño Gráfico</h3>
             <p>
-            Creamos identidades visuales impactantes que capturan la esencia de tu marca, desde logotipos hasta materiales de marketing, asegurando que tu mensaje resuene en tu audiencia.
+              Creamos identidades visuales impactantes que capturan la esencia
+              de tu marca, desde logotipos hasta materiales de marketing,
+              asegurando que tu mensaje resuene en tu audiencia.
             </p>
           </div>
         </div>

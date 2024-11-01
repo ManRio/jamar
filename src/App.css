@@ -151,7 +151,16 @@ body {
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
   font-size: 1rem;
-  max-width: 400px; /* Compacto en footer */
+}
+
+/* Estilos para el enlace de las condiciones legales y política de privacidad */
+.link {
+  color: #264561; /* Asegúrate de que el color del enlace se destaque */
+  text-decoration: underline; /* Opción para subrayar los enlaces */
+}
+
+.link:hover {
+  color: #1e3a51; /* Color al pasar el mouse sobre el enlace */
 }
 
 /* Estilos para la página Contact */
@@ -358,35 +367,41 @@ body {
 /* Hero Section */
 .hero-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   color: #264561;
-  background: linear-gradient(rgba(38, 69, 97, 0.7), rgba(89, 199, 216, 0.702)),
-    url("/public/images/imagenfondo2.png");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(to bottom, #f8f8f8, #e0eaf5); /* Fondo suave */
+  padding: 2rem 4rem;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
   text-align: center;
-  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .hero-title {
   font-size: 3rem;
-  margin-bottom: 2rem;
-  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+  margin-bottom: 1.5rem;
+  color: #264561;
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+  margin-bottom: 2.5rem;
+  color: #5b6b8b;
 }
 
 .hero-buttons {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 1.5rem;
 }
 
 .hero-button {
@@ -395,73 +410,78 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-button--primary {
   background-color: #264561;
-  color: #93bb9e;
-  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+  color: #ffffff;
 }
 
 .hero-button--secondary {
-  background-color: transparent;
+  background-color: #ffffff;
   color: #264561;
   border: 2px solid #264561;
-  filter: drop-shadow(3px 3px 0.8rem #ffffff);
 }
 
 .hero-button:hover {
   transform: scale(1.05);
 }
 
+.hero-image {
+  flex: 0.6;
+  background: url("/public/images/imagenfondo2.png") no-repeat center;
+  background-size: cover;
+  filter: opacity(0.90);
+  height: 70vh;
+  border-radius: 8px;
+}
 /* Servicios Section */
 .servicios-section {
-  margin-bottom: 2rem;
   padding: 4rem 2rem;
   text-align: center;
+  background-color: #f9f9f9;
 }
+
 .servicios-section h1 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
   color: #264561;
 }
 
 .servicios-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 1.5rem;
 }
 
 .servicio-card {
-  background-color: #264561;
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
-  color: #cde6c6;
-  flex: 1 1 30%; /* Ajusta el ancho para llenar más espacio */
+  color: #264561;
   min-width: 250px;
-  max-width: 400px;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.servicio-card h3 {
-  margin-bottom: 1rem;
+  max-width: 350px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servicio-card:hover {
-  transform: scale(1.15);
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Proceso Section */
 .proceso-section {
   padding: 4rem 2rem;
+  background-color: #e9f0f6;
   text-align: center;
 }
 
 .proceso-section h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #264561;
 }
@@ -469,38 +489,39 @@ body {
 .proceso-timeline {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra las tarjetas */
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .proceso-step {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: #93bb9e;
-  padding: 2rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
   border-radius: 8px;
   color: #264561;
-  width: 70%; /* Ajusta el ancho de cada tarjeta */
+  width: 90%;
   max-width: 600px;
-  transition: all 0.3s ease;
-  text-align: left;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Tarjetas a la izquierda */
 .proceso-step--left {
-  margin-right: 25%;
+  align-self: flex-start;
+  margin-left: 500px;
 }
 
-/* Tarjetas a la derecha */
 .proceso-step--right {
-  margin-left: 25%;
+  align-self: flex-end;
+  margin-right: 500px;
 }
 
-/* Contenido normalizado para lectura */
-.proceso-step h4,
+.proceso-step h4 {
+  margin: 0;
+}
+
 .proceso-step p {
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* CTA Final Section */
@@ -508,9 +529,192 @@ body {
   text-align: center;
   padding: 4rem 2rem;
   background-color: #264561;
-  color: #cde6c6;
+  color: #ffffff;
 }
 
 .cta-section h2 {
   margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.cta-section button {
+  background-color: #93bb9e;
+  color: #264561;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.cta-section button:hover {
+  transform: scale(1.05);
+}
+
+
+/* Contenedor del Documento */
+.document-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Estilos Generales para Políticas Legales */
+.politica-cookies,
+.politica-privacidad,
+.aviso-legal {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f5f9f8;
+  color: #264561;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Estilos para títulos principales y secciones */
+.politica-cookies h1,
+.politica-privacidad h1,
+.aviso-legal h1 {
+  font-size: 2.5rem;
+  color: #264561;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.politica-cookies h2,
+.politica-privacidad h2,
+.aviso-legal h2 {
+  font-size: 1.8rem;
+  color: #264561;
+  border-left: 4px solid #93bb9e;
+  padding-left: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para los párrafos */
+.politica-cookies p,
+.politica-privacidad p,
+.aviso-legal p {
+  font-size: 1rem;
+  color: #3b4a5a;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para las listas */
+.politica-cookies ul,
+.politica-privacidad ul,
+.aviso-legal ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.politica-cookies ul li,
+.politica-privacidad ul li,
+.aviso-legal ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Enlaces */
+.politica-cookies a,
+.politica-privacidad a,
+.aviso-legal a {
+  color: #264561;
+  text-decoration: underline;
+}
+
+.politica-cookies a:hover,
+.politica-privacidad a:hover,
+.aviso-legal a:hover {
+  color: #93bb9e;
+  text-decoration: none;
+}
+
+/* Responsive - Ajustes en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .document-container {
+    padding: 1.5rem;
+  }
+
+  .politica-cookies h1,
+  .politica-privacidad h1,
+  .aviso-legal h1 {
+    font-size: 2rem;
+  }
+
+  .politica-cookies h2,
+  .politica-privacidad h2,
+  .aviso-legal h2 {
+    font-size: 1.5rem;
+  }
+
+  .politica-cookies p,
+  .politica-privacidad p,
+  .aviso-legal p {
+    font-size: 0.95rem;
+  }
+}
+
+/* SERVICES PAGE */
+
+.workflow__card {
+  margin: 0 auto;
+  margin-top: 2%;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.workflow__card h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px; 
+}
+
+.servicios-title {
+  font-size: 2.5rem;
+  color: #264561;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+/* Contenedor para los botones de acción */
+.action-buttons {
+  display: flex;
+  justify-content: center; /* Centra los botones */
+  gap: 1rem; /* Espacio entre los botones */
+  margin: 3rem 0; /* Espaciado arriba y abajo */
+}
+
+/* Estilos generales para los botones */
+.action-button {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Botón de Presupuesto */
+.budget-button {
+  background-color: #93bb9e;
+  color: #264561;
+}
+
+/* Botón de Contacto */
+.contact-button {
+  background-color: #264561;
+  color: #fff;
+}
+
+/* Efecto hover para ambos botones */
+.action-button:hover {
+  transform: scale(1.05);
 }

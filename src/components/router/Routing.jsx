@@ -8,9 +8,10 @@ import Portfolio from "../Portfolio";
 import Presupuesto from "../Presupuesto";
 import Contacto from "../Contacto";
 import { Footer } from "../layout/Footer";
-import { AvisoLegal } from "../AvisoLegal";
-import { PoliticaCookies } from "../PoliticaCookies";
-import { PoliticaPrivacidad } from "../PoliticaPrivacidad";
+import AvisoLegal from "../AvisoLegal";
+import PoliticaPrivacidad from "../PoliticaPrivacidad";
+import PoliticaCookies from "../PoliticaCookies";
+
 
 export const Routing = () => {
   return (
