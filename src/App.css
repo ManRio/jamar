@@ -303,6 +303,7 @@ body {
 .footer a:hover {
   color: #93bb9e;
   transform: scale(1.06);
+  transition: all 0.3s;
 }
 
 .footer__navigation ul,
@@ -348,4 +349,168 @@ body {
   .footer__column {
     margin-bottom: 1rem;
   }
+}
+
+/* PAGINA DE INICIO */
+
+/* Estilo general de Inicio */
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #264561;
+  background: linear-gradient(rgba(38, 69, 97, 0.7), rgba(89, 199, 216, 0.702)),
+    url("/public/images/imagenfondo2.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.hero-button--primary {
+  background-color: #264561;
+  color: #93bb9e;
+  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+}
+
+.hero-button--secondary {
+  background-color: transparent;
+  color: #264561;
+  border: 2px solid #264561;
+  filter: drop-shadow(3px 3px 0.8rem #ffffff);
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+}
+
+/* Servicios Section */
+.servicios-section {
+  margin-bottom: 2rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.servicios-section h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #264561;
+}
+
+.servicios-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.servicio-card {
+  background-color: #264561;
+  padding: 2rem;
+  border-radius: 8px;
+  color: #cde6c6;
+  flex: 1 1 30%; /* Ajusta el ancho para llenar más espacio */
+  min-width: 250px;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.servicio-card h3 {
+  margin-bottom: 1rem;
+}
+
+.servicio-card:hover {
+  transform: scale(1.15);
+}
+
+/* Proceso Section */
+.proceso-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.proceso-section h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #264561;
+}
+
+.proceso-timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra las tarjetas */
+  gap: 2rem;
+}
+
+.proceso-step {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #93bb9e;
+  padding: 2rem;
+  border-radius: 8px;
+  color: #264561;
+  width: 70%; /* Ajusta el ancho de cada tarjeta */
+  max-width: 600px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+/* Tarjetas a la izquierda */
+.proceso-step--left {
+  margin-right: 25%;
+}
+
+/* Tarjetas a la derecha */
+.proceso-step--right {
+  margin-left: 25%;
+}
+
+/* Contenido normalizado para lectura */
+.proceso-step h4,
+.proceso-step p {
+  margin: 0 auto;
+}
+
+/* CTA Final Section */
+.cta-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #264561;
+  color: #cde6c6;
+}
+
+.cta-section h2 {
+  margin-bottom: 1.5rem;
 }
