@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const ContactForm = ({ className = '' }) => {
+export const ContactForm = ({ className = "" }) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -9,6 +9,7 @@ export const ContactForm = ({ className = '' }) => {
     email: "",
     serviceType: "",
     message: "",
+    acceptedLegalConditions: false,
   });
 
   const handleChange = (e) => {
@@ -19,9 +20,43 @@ export const ContactForm = ({ className = '' }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos enviados:", formData);
+
+    try {
+      const response = await fetch(
+        "https://jamar-manriodevs-projects.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        alert("Formulario enviado correctamente.");
+        setFormData({
+          name: "",
+          phone: "",
+          wantsPhoneInfo: false,
+          email: "",
+          serviceType: "",
+          message: "",
+          acceptedLegalConditions: false,
+        });
+      } else {
+        alert(
+          "Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo."
+        );
+      }
+    } catch (error) {
+      console.error("Error al enviar el formulario:", error);
+      alert(
+        "Hubo un error de red al enviar el formulario. Por favor, inténtalo más tarde."
+      );
+    }
   };
 
   return (
@@ -77,10 +112,14 @@ export const ContactForm = ({ className = '' }) => {
           onChange={handleChange}
           required
         >
-          <option value="" disabled>Selecciona un servicio</option>
+          <option value="" disabled>
+            Selecciona un servicio
+          </option>
           <option value="diseñoGrafico">Diseño Gráfico</option>
           <option value="gestionRedes">Gestión de Redes Sociales</option>
-          <option value="creacionWeb">Creación y Diseño de Página Web o WebApp</option>
+          <option value="creacionWeb">
+            Creación y Diseño de Página Web o WebApp
+          </option>
         </select>
       </label>
 
@@ -95,8 +134,8 @@ export const ContactForm = ({ className = '' }) => {
         />
       </label>
 
-            {/* Checkbox para aceptar condiciones legales */}
-            <label className="contact-form__checkbox-label">
+      {/* Checkbox para aceptar condiciones legales */}
+      <label className="contact-form__checkbox-label">
         <input
           type="checkbox"
           name="acceptedLegalConditions"
@@ -106,8 +145,14 @@ export const ContactForm = ({ className = '' }) => {
         />
         <span>
           Acepto las{" "}
-          <Link to="/aviso-legal" className="link">condiciones legales</Link> y la{" "}
-          <Link to="/politica-privacidad" className="link">política de privacidad</Link>.
+          <Link to="/aviso-legal" className="link">
+            condiciones legales
+          </Link>{" "}
+          y la{" "}
+          <Link to="/politica-privacidad" className="link">
+            política de privacidad
+          </Link>
+          .
         </span>
       </label>
 
