@@ -8,8 +8,8 @@ export const Footer = () => {
         {/* Column Contact Info */}
         <div className="footer__column footer__contact-info">
           <h3>Información de Contacto</h3>
-          <a href="mailto:manureina87@gmail.com" className="footer__email">
-            <i className="bi bi-envelope-at"></i> &nbsp;manureina87@gmail.com
+          <a href="mailto:info@jamarmedia.es" className="footer__email">
+            <i className="bi bi-envelope-at"></i> &nbsp;info@jamarmedia.es
           </a>
           <p className="footer__phone">
             {" "}
@@ -22,10 +22,10 @@ export const Footer = () => {
             >
               <i className="bi bi-whatsapp"></i>
             </a>
-            <a href="https://www.facebook.com" className="footer__social-link">
+            <a href="https://www.facebook.com/jamarmedia2024" className="footer__social-link">
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com" className="footer__social-link">
+            <a href="https://www.instagram.com/jamarmedia2024" className="footer__social-link">
               <i className="bi bi-instagram"></i>
             </a>
           </div>

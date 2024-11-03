@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 
-export const ContactForm = ({ className = "" }) => {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -20,47 +21,29 @@ export const ContactForm = ({ className = "" }) => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(
-        "https://jamar-manriodevs-projects.vercel.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+    // Configura tus parámetros de EmailJS
+    const serviceID = "service_7cqedpa";
+    const templateID = "template_o16f2c6";
+    const publicKey = "zfGww17R8HgjtwoAl";
 
-      if (response.ok) {
-        alert("Formulario enviado correctamente.");
-        setFormData({
-          name: "",
-          phone: "",
-          wantsPhoneInfo: false,
-          email: "",
-          serviceType: "",
-          message: "",
-          acceptedLegalConditions: false,
-        });
-      } else {
-        alert(
-          "Hubo un problema al enviar el formulario. Por favor, inténtalo de nuevo."
-        );
+    // Envía el formulario a través de EmailJS
+    emailjs.send(serviceID, templateID, formData, publicKey).then(
+      (response) => {
+        alert("Formulario enviado correctamente");
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      (error) => {
+        alert("Error al enviar el formulario. Inténtalo de nuevo.");
+        console.error("FAILED...", error);
       }
-    } catch (error) {
-      console.error("Error al enviar el formulario:", error);
-      alert(
-        "Hubo un error de red al enviar el formulario. Por favor, inténtalo más tarde."
-      );
-    }
+    );
   };
 
   return (
-    <form className={`contact-form ${className}`} onSubmit={handleSubmit}>
+    <form className="contact-form" onSubmit={handleSubmit}>
       <label>
         Nombre:
         <input
@@ -71,7 +54,6 @@ export const ContactForm = ({ className = "" }) => {
           required
         />
       </label>
-
       <label>
         Teléfono:
         <input
@@ -81,8 +63,6 @@ export const ContactForm = ({ className = "" }) => {
           onChange={handleChange}
         />
       </label>
-
-      {/* Checkbox para recibir información telefónica */}
       <label className="contact-form__checkbox-label">
         <input
           type="checkbox"
@@ -92,7 +72,6 @@ export const ContactForm = ({ className = "" }) => {
         />
         <span>Quiero recibir información por teléfono</span>
       </label>
-
       <label>
         Correo Electrónico:
         <input
@@ -103,7 +82,6 @@ export const ContactForm = ({ className = "" }) => {
           required
         />
       </label>
-
       <label>
         Tipo de Servicio:
         <select
@@ -122,7 +100,6 @@ export const ContactForm = ({ className = "" }) => {
           </option>
         </select>
       </label>
-
       <label>
         Mensaje:
         <textarea
@@ -133,8 +110,6 @@ export const ContactForm = ({ className = "" }) => {
           placeholder="Cuéntanos más sobre tu proyecto y necesidades"
         />
       </label>
-
-      {/* Checkbox para aceptar condiciones legales */}
       <label className="contact-form__checkbox-label">
         <input
           type="checkbox"
@@ -155,7 +130,6 @@ export const ContactForm = ({ className = "" }) => {
           .
         </span>
       </label>
-
       <button type="submit">Enviar</button>
     </form>
   );

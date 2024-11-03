@@ -1,31 +1,63 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../App.css"; // Aquí importarías tu archivo de estilos
+import { useNavigate } from "react-router-dom";
 
 const Inicio = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll(".fade-in"); // Selecciona todos los elementos con la clase fade-in
+      const windowHeight = window.innerHeight;
+
+      elements.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          element.classList.add("visible"); // Agrega la clase visible cuando el elemento está en el viewport
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Ejecutar la función al montar el componente
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Limpiar el listener al desmontar
+    };
+  }, []);
+
   return (
     <div className="inicio">
       {/* Hero Section */}
-      <section className="hero-section">
+      <section className="hero-section fade-in">
         <div className="hero-content">
-          <h1 className="hero-title">¡Impulsa tu presencia digital de manera sencilla y efectiva!</h1>
+          <h1 className="hero-title">
+            ¡Impulsa tu presencia digital de manera sencilla y efectiva!
+          </h1>
           <p className="hero-subtitle">
-          Nos encargamos de cada detalle para que tú te enfoques en tu negocio.
+            Nos encargamos de cada detalle para que tú te enfoques en tu
+            negocio.
           </p>
           <div className="hero-buttons">
-            <button className="hero-button hero-button--primary">
+            <button
+              className="hero-button hero-button--primary"
+              onClick={() => navigate("/contacto")}
+            >
               Contáctanos
             </button>
-            <button className="hero-button hero-button--secondary">
+            <button
+              className="hero-button hero-button--secondary"
+              onClick={() => navigate("/servicios")}
+            >
               Explorar Servicios
             </button>
           </div>
         </div>
-        <div className="hero-image">
-        </div>
+        <div className="hero-image"></div>
       </section>
 
       {/* Servicios Section */}
-      <section className="servicios-section">
+      <section className="servicios-section fade-in">
         <h1>Nuestros Servicios</h1>
         <div className="servicios-list">
           <div className="servicio-card">
@@ -54,7 +86,7 @@ const Inicio = () => {
       </section>
 
       {/* Proceso Section */}
-      <section className="proceso-section">
+      <section className="proceso-section fade-in">
         <h1>Cómo Trabajamos</h1>
         <div className="proceso-timeline">
           <div className="proceso-step proceso-step--left">
@@ -77,9 +109,14 @@ const Inicio = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="cta-section">
+      <section className="cta-section fade-in">
         <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
-        <button className="hero-button hero-button--primary">Hablemos</button>
+        <button
+          className="hero-button hero-button--primary"
+          onClick={() => navigate("/contacto")}
+        >
+          Hablemos
+        </button>
       </section>
     </div>
   );

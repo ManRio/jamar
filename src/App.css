@@ -250,12 +250,35 @@ body {
   background-color: #1e3a51;
 }
 
+.contact-section h3 {
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  color: #264561; /* Color del texto del título */
+  margin-top: 1rem; /* Espacio superior */
+}
+.contac-section h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para el título */
+  color: #264561; /* Color del texto del título */
+  margin-top: 1rem; /* Espacio superior */
+}
+
+.contact-section p {
+  font-size: 1.1rem; /* Tamaño de fuente para el subtítulo */
+  color: #264561; /* Color del texto del subtítulo */
+  margin-bottom: 1.5rem; /* Espacio inferior */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-form {
     width: 100%;
     padding: 1rem;
     font-size: 0.9rem;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+  }
+
+  .contact-page .contact-form {
+    width: 100%; /* Ancho completo en la página de contacto también */
+    padding: 1rem;
   }
 }
 
@@ -371,7 +394,7 @@ body {
   align-items: center;
   height: 100vh;
   color: #264561;
-  background: linear-gradient(to bottom, #f8f8f8, #e0eaf5); /* Fondo suave */
+  background: linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9); /* Fondo suave */
   padding: 2rem 4rem;
   gap: 2rem;
 }
@@ -433,15 +456,36 @@ body {
   flex: 0.6;
   background: url("/public/images/imagenfondo2.png") no-repeat center;
   background-size: cover;
-  filter: opacity(0.90);
+  filter: opacity(0.9);
   height: 70vh;
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Cambia la disposición a columna */
+    padding: 1rem;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-image {
+    height: 40vh; /* Ajusta la altura en móviles */
+  }
+}
+
 /* Servicios Section */
 .servicios-section {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9);
 }
 
 .servicios-section h1 {
@@ -458,7 +502,7 @@ body {
 }
 
 .servicio-card {
-  background-color: #ffffff;
+  background-color: #f5f9f8;
   padding: 2rem;
   border-radius: 8px;
   color: #264561;
@@ -476,7 +520,7 @@ body {
 /* Proceso Section */
 .proceso-section {
   padding: 4rem 2rem;
-  background-color: #e9f0f6;
+  background-color:linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9);
   text-align: center;
 }
 
@@ -491,6 +535,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  padding: 0 1rem;
 }
 
 .proceso-step {
@@ -550,6 +595,18 @@ body {
   transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+  .proceso-step {
+    width: 100%; /* Usa todo el ancho en pantallas pequeñas */
+    margin: 0 auto; /* Centra el contenido */
+  }
+
+  .proceso-step--left,
+  .proceso-step--right {
+    align-self: center; /* Centra los pasos */
+    margin: 0; /* Elimina los márgenes laterales */
+  }
+}
 
 /* Contenedor del Documento */
 .document-container {
@@ -673,7 +730,7 @@ body {
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .servicios-title {
@@ -717,4 +774,16 @@ body {
 /* Efecto hover para ambos botones */
 .action-button:hover {
   transform: scale(1.05);
+}
+
+/* Efecto de desvanecimiento para los elementos */
+.fade-in {
+  opacity: 0; /* Oculto inicialmente */
+  transform: translateY(40px); /* Desplazado hacia abajo */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Efecto de desvanecimiento y desplazamiento */
+}
+
+.fade-in.visible {
+  opacity: 1; /* Visibles cuando se agrega la clase */
+  transform: translateY(0); /* Sin desplazamiento */
 }

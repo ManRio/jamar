@@ -36,7 +36,7 @@ const PoliticaPrivacidad = () => (
         Tiene derecho a acceder a sus datos personales, solicitar su
         rectificación, cancelación o limitación de uso, y a oponerse a su
         tratamiento. Puede ejercer estos derechos poniéndose en contacto con
-        nosotros a través de [email de contacto].
+        nosotros a través de info@jamarmedia.es .
       </p>
       <h2>Modificaciones a esta Política</h2>
       <p>

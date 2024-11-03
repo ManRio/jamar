@@ -180,7 +180,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
   flex: 1; /* Para que las tarjetas ocupen el mismo espacio */
   max-width: calc(50% - 1rem); /* Ajusta el ancho máximo de las tarjetas */
-  transition: 3ms all ;
+  transition: 3ms all;
 }
 
 .workflow-card:hover {
@@ -206,12 +206,15 @@
   .contact-container {
     flex-direction: column; /* Cambia a columna en dispositivos pequeños */
     align-items: center; /* Centrar el contenido */
+    width: 100%; /* Ancho completo para evitar desbordamiento */
+    padding: 0 1rem; /* Espaciado horizontal para evitar que se pegue a los bordes */
+    box-sizing: border-box;
   }
 
   .contact-form-container {
-    flex: 0 0 100%; /* El formulario ocupa el 100% */
-    margin-right: 0 auto;
-    margin-bottom: 1rem; /* Espacio debajo del formulario */
+    flex: 1; /* Ancho completo en móviles */
+    margin: 0 auto 1rem auto; /* Centrado y con margen inferior */
+    width: 100%;
   }
 
   .workflow-container {
@@ -227,5 +230,12 @@
   .workflow-card {
     max-width: 80%; /* Limitar el ancho de las tarjetas al 80% */
     margin-bottom: 1rem; /* Espacio entre las tarjetas */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    max-width: 100%; /* Ancho completo en dispositivos móviles */
+    padding: 0 1rem; /* Margen lateral para evitar que se pegue a los bordes */
   }
 }
