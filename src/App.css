@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap");
 
 /* General Styles */
 * {
@@ -8,7 +9,8 @@
 }
 
 body {
-  font-family: "Outfit", sans-serif; /* Aplica la fuente Outfit */
+  font-family: "Outfit", serif;
+  background-color: #f4f4f4;
 }
 
 .app-container {
@@ -21,15 +23,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Ajusta el padding según necesites */
+  padding: 1rem 2rem;
   background-color: #264561;
   color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.divider {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  margin-top: -10px; /* Para que el divider toque el header */
+  z-index: 1;
 }
 
 .content {
-  background: linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9);
+  background: #f4f4f4;
   margin: 0;
   padding: 0;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 /* Logo */
@@ -39,7 +54,17 @@ body {
 }
 
 .header__logo img {
-  height: 45px;
+  height: 60px;
+  width: 60px;
+}
+
+.header__logo-title {
+  font-family: "Lusitana", serif;
+  font-size: 2rem;
+  margin-left: 2.5rem;
+  font-weight: 700;
+  align-items: center;
+  text-align: center;
 }
 
 /* Navegación */
@@ -122,12 +147,6 @@ body {
   .header__menu {
     display: none;
   }
-}
-
-.content {
-  background: linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9);
-  margin: 0;
-  padding: 0;
 }
 
 .img-404 {
@@ -285,6 +304,7 @@ body {
 /* Footer general */
 .footer {
   margin-top: auto;
+  width: 100%;
   background-color: #264561; /* Color de fondo del footer */
   color: #cde6c6;
   font-size: 0.9rem;
@@ -394,7 +414,7 @@ body {
   align-items: center;
   height: 100vh;
   color: #264561;
-  background: linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9); /* Fondo suave */
+  background: #f4f4f4; /* Fondo suave */
   padding: 2rem 4rem;
   gap: 2rem;
 }
@@ -454,11 +474,11 @@ body {
 
 .hero-image {
   flex: 0.6;
-  background: url("/public/images/imagenfondo2.png") no-repeat center;
-  background-size: cover;
+  background: url("/public/images/background.webp") no-repeat center;
+  background-size: contain;
   filter: opacity(0.9);
   height: 70vh;
-  border-radius: 8px;
+  filter: drop-shadow(1.5px 1.5px 0.4rem #264561);
 }
 
 @media (max-width: 768px) {
@@ -485,7 +505,7 @@ body {
 .servicios-section {
   padding: 4rem 2rem;
   text-align: center;
-  background-color: linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9);
+  background-color: #f4f4f4;
 }
 
 .servicios-section h1 {
@@ -502,7 +522,7 @@ body {
 }
 
 .servicio-card {
-  background-color: #f5f9f8;
+  background-color: #cde6c6;
   padding: 2rem;
   border-radius: 8px;
   color: #264561;
@@ -520,7 +540,7 @@ body {
 /* Proceso Section */
 .proceso-section {
   padding: 4rem 2rem;
-  background-color:linear-gradient(to bottom, #ddebc8, #cde8d6, #b0d9e0, #a1d1c9);
+  background-color: #f4f4f4;
   text-align: center;
 }
 
@@ -542,7 +562,6 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  background-color: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
   color: #264561;
@@ -554,11 +573,13 @@ body {
 .proceso-step--left {
   align-self: flex-start;
   margin-left: 500px;
+  background-color: #cde6c6;
 }
 
 .proceso-step--right {
   align-self: flex-end;
   margin-right: 500px;
+  background-color: #93bb9e;
 }
 
 .proceso-step h4 {
@@ -573,8 +594,8 @@ body {
 .cta-section {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #264561;
-  color: #ffffff;
+  background-color: #f4f4f4;
+  color: #264561;
 }
 
 .cta-section h2 {
@@ -583,8 +604,8 @@ body {
 }
 
 .cta-section button {
-  background-color: #93bb9e;
-  color: #264561;
+  background-color: #264561;
+  color: #93bb9e;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border-radius: 5px;

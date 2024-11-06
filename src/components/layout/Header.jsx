@@ -11,65 +11,68 @@ export const Header = () => {
   };
 
   return (
-    <header className="header">
-      <div className="header__logo">
-        <NavLink to="/" className="header__logo-link">
-          <img src="/images/logoblanco.png" alt="logotipo blanco"></img>
-        </NavLink>
-      </div>
-      <nav className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
-        <ul className="header__nav-list">
-          <li className="header__nav-item">
-            <NavLink to="/" className="header__nav-link" onClick={toggleMenu}>
-              Inicio
-            </NavLink>
-          </li>
-          <li className="header__nav-item">
-            <NavLink
-              to="/nosotros"
-              className="header__nav-link"
-              onClick={toggleMenu}
-            >
-              Sobre Nosotros
-            </NavLink>
-          </li>
-          <li className="header__nav-item">
-            <NavLink
-              to="/presupuesto"
-              className="header__nav-link"
-              onClick={toggleMenu}
-            >
-              Presupuesto
-            </NavLink>
-          </li>
-          <li className="header__nav-item">
-            <NavLink
-              to="/servicios"
-              className="header__nav-link"
-              onClick={toggleMenu}
-            >
-              Servicios
-            </NavLink>
-          </li>
-          <li className="header__nav-item">
-            <NavLink
-              to="/contacto"
-              className="header__nav-link"
-              onClick={toggleMenu}
-            >
-              Contacto
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-      <div
-        className={`header__menu ${isMenuOpen ? "header__menu--open" : ""}`}
-        onClick={toggleMenu}
-      >
-        <span className="header__menu-line"></span>
-        <span className="header__menu-line"></span>
-        <span className="header__menu-line"></span>
-      </div>
-    </header>
+    <>
+      <header className="header">
+        <div className="header__logo">
+          <NavLink to="/" className="header__logo-link">
+            <img src="/images/logo.png" alt="logotipo blanco"></img>
+          </NavLink>
+          <h1 className="header__logo-title">Jamar Media</h1>
+        </div>
+        <nav className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
+          <ul className="header__nav-list">
+            <li className="header__nav-item">
+              <NavLink to="/" className="header__nav-link" onClick={toggleMenu}>
+                Inicio
+              </NavLink>
+            </li>
+            <li className="header__nav-item">
+              <NavLink
+                to="/nosotros"
+                className="header__nav-link"
+                onClick={toggleMenu}
+              >
+                Sobre Nosotros
+              </NavLink>
+            </li>
+            <li className="header__nav-item">
+              <NavLink
+                to="/presupuesto"
+                className="header__nav-link"
+                onClick={toggleMenu}
+              >
+                Presupuesto
+              </NavLink>
+            </li>
+            <li className="header__nav-item">
+              <NavLink
+                to="/servicios"
+                className="header__nav-link"
+                onClick={toggleMenu}
+              >
+                Servicios
+              </NavLink>
+            </li>
+            <li className="header__nav-item">
+              <NavLink
+                to="/contacto"
+                className="header__nav-link"
+                onClick={toggleMenu}
+              >
+                Contacto
+              </NavLink>
+            </li>
+          </ul>
+        </nav>
+        <div
+          className={`header__menu ${isMenuOpen ? "header__menu--open" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span className="header__menu-line"></span>
+          <span className="header__menu-line"></span>
+          <span className="header__menu-line"></span>
+        </div>
+      </header>
+    </>
   );
 };

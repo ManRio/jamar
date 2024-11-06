@@ -37,16 +37,16 @@ export const Routing = () => {
               <div className="page">
                 <img
                   className="img-404"
-                  src="/images/404.png"
+                  src="/images/404.webp"
                   alt="gato verde enredado en un 404 gigante"
                 />
               </div>
             }
           />
         </Routes>
-        {/* Footer */}
-        <Footer />
       </section>
+      {/* Footer */}
+      <Footer />
     </BrowserRouter>
   );
 };

@@ -5,7 +5,7 @@ export const Services = () => {
     <div className="service-container">
       <div className="service">
         <div className="service-image">
-          <img src="/images/graphicdesign.jpg" alt="Diseño Gráfico" />
+          <img src="/images/graphicdesign.webp" alt="Diseño Gráfico" />
         </div>
         <div className="service-description">
           <h2>Diseño Gráfico</h2>
@@ -27,7 +27,7 @@ export const Services = () => {
 
       <div className="service">
         <div className="service-image">
-          <img src="/images/socialmedia.jpg" alt="Gestión de Redes Sociales" />
+          <img src="/images/socialmedia.webp" alt="Gestión de Redes Sociales" />
         </div>
         <div className="service-description">
           <h2>Gestión de Redes Sociales</h2>
@@ -51,7 +51,7 @@ export const Services = () => {
       <div className="service">
         <div className="service-image">
           <img
-            src="/images/webdev.jpg"
+            src="/images/webdev.webp"
             alt="Creación y Desarrollo de Páginas Web"
           />
         </div>

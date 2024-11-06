@@ -9,24 +9,24 @@ export const Footer = () => {
         <div className="footer__column footer__contact-info">
           <h3>Información de Contacto</h3>
           <a href="mailto:info@jamarmedia.es" className="footer__email">
-            <i className="bi bi-envelope-at"></i> &nbsp;info@jamarmedia.es
+            <i className="bi bi-envelope-at">&nbsp; info@jamarmedia.es</i> 
           </a>
           <p className="footer__phone">
             {" "}
-            <i className="bi bi-telephone"></i> Teléfono: +34 645 022 166
+            <i className="bi bi-telephone">&nbsp; Teléfono: +34 645 022 166</i> 
           </p>
           <div className="footer__social">
             <a
               href="https://wa.me/+34645022166"
               className="footer__social-link"
             >
-              <i className="bi bi-whatsapp"></i>
+              <i className="bi bi-whatsapp">&nbsp; Contáctanos por Whatsaap</i>
             </a>
             <a href="https://www.facebook.com/jamarmedia2024" className="footer__social-link">
-              <i className="bi bi-facebook"></i>
+              <i className="bi bi-facebook">&nbsp; Síguenos en Facebook</i>
             </a>
             <a href="https://www.instagram.com/jamarmedia2024" className="footer__social-link">
-              <i className="bi bi-instagram"></i>
+              <i className="bi bi-instagram">&nbsp; Síguenos en Instagram</i>
             </a>
           </div>
         </div>
